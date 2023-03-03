@@ -4,6 +4,7 @@ import Row from "../core/components/Row";
 import SideNumber from "../components/SideNumber";
 import Nav from "../components/Nav";
 import MissionSection from "../components/MissionSection";
+import { motion } from "framer-motion";
 
 export default function HeroSection() {
   return (
@@ -14,14 +15,16 @@ export default function HeroSection() {
             <Nav />
             <Row>
               <SideNumber number="01" message="Who is Magomere" />
-              <MissionSection
-                bigTitle="Creating a 
+              <div style={{ width: "56%", marginLeft: "4rem" }}>
+                <MissionSection
+                  bigTitle="Creating a 
 positive impact."
-                paragraph="Hey ! I am Igadwa Magomere. 
+                  paragraph="Hey ! I am Igadwa Magomere. 
 I have made it a life long cause 
 to create a positive impact 
 through technology."
-              />
+                />
+              </div>
             </Row>
           </Column>
         </div>

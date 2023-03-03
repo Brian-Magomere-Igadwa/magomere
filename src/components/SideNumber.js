@@ -1,10 +1,11 @@
 import React from "react";
 import Row from "../core/components/Row";
 import Column from "../core/components/Column";
+import { motion } from "framer-motion";
 
-export default function SideNumber({ number, message }) {
+export default function SideNumber({ number, message, color }) {
   return (
-    <div
+    <motion.div
       style={{
         height: "85vh",
         width: "14%",
@@ -12,6 +13,18 @@ export default function SideNumber({ number, message }) {
         display: "flex",
         justifyContent: "center",
         alignItems: "end",
+        overflow: "hidden",
+      }}
+      initial={{
+        y: "100vh",
+      }}
+      whileInView={{
+        y: 0,
+      }}
+      viewport={{ once: true }}
+      transition={{
+        duration: 1,
+        ease: "easeOut",
       }}
     >
       <div
@@ -26,11 +39,17 @@ export default function SideNumber({ number, message }) {
           flexDirection: "column",
         }}
       >
-        <h1 className="light-green pointer title bigger-small-size ">
+        <h1
+          className={`title bigger-smaller-size pointer  ${
+            color?.length > 0 ? "white" : "light-green"
+          }`}
+        >
           {number}
         </h1>
         <div
-          className="light-green-bg"
+          className={`pointer ${
+            color?.length > 0 ? "white-bg" : "light-green-bg"
+          }`}
           style={{
             width: "2px",
             height: "20vh",
@@ -48,7 +67,9 @@ export default function SideNumber({ number, message }) {
           }}
         >
           <h3
-            className="semibold-text light-green pointer align-center rotate-it"
+            className={` semibold-text  pointer align-center rotate-it ${
+              color?.length > 0 ? "white" : "light-green"
+            }`}
             style={{
               height: "20vh",
               display: "flex",
@@ -63,6 +84,6 @@ export default function SideNumber({ number, message }) {
           </h3>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
