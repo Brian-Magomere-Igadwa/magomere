@@ -10,10 +10,16 @@ export default function Menu() {
         justifyContent: "space-around",
       }}
     >
-      <h3 className="menu-item hover-bold regular-text light-green pointer">
+      <h3 className="menu-item hover-bold bold-text light-green pointer">
         About me
       </h3>
-      <h3 className="menu-item regular-text dark-green pointer">About me</h3>
+      <a
+        className="menu-item regular-text dark-green pointer"
+        style={{ textDecoration: "none" }}
+        href="#contact"
+      >
+        <h3 className="menu-item regular-text dark-green pointer">Contact</h3>
+      </a>
     </Row>
   );
 }
